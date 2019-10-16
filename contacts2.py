@@ -5,6 +5,8 @@ class Contact:
     def __init__(self, name, phone_number,address=None, email=None):
         self.name = name
         self.phone_number = phone_number
+        self.address = address
+        self.email = email
 
 
     def __str__(self):
@@ -118,8 +120,10 @@ def save(data, phonebook):
         pickle.dump(data, f)
 
 def input_contact():
-    c_name = input("Enter your name: ")
-    c_phone_number = input("Enter your phone_number: ")
+    c_name = input("Enter contacts name: ")
+    c_phone_number = input("Enter contacts phone_number: ")
+    c_email = input("enter contacts  email(optional): ")
+    c_address = input("enter contacts address(optional):  ")
 
     contact = Contact(name=c_name, phone_number=c_phone_number)
     return contact
