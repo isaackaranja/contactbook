@@ -1,0 +1,20 @@
+{% extends 'contacts/base.html' %}
+{% block title %} contact {% endblock %}
+{% block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ error }}
+<form action="{% url "contacts" %}" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit">add</button>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'contacts/base.html' %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "contacts/style.css" %}">
+
+{% block title %} contact {% endblock %}
+{% block body%}
+{{ message }}
+<form method="POST" action="{% url 'search'  %}">}}
+    {% csrf_token %}
+    <input name="q" value="{{ request.POST.q }}" placeholder="search">
+    <button type="submit">submit</button>
+</form>
+{% for cont in all_conts %}
+    <p class="con_name"><a href="{% url 'details' cont.id %}">{{ cont.name }}</a><span class="con_num">{{ cont.phone_number }}</span></p>
+
+{% endfor %}
+{% endblock %}

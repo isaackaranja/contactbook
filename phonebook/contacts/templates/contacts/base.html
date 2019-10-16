@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device_width">
+    <link rel="stylesheet" type="text/css", href="{% static 'contacts/style.css' %}"/>
+    <title>{% block title %} {{ Title }} {% endblock %}</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div id="branding">
+            <h1><span class="highlight">Phone</span>book</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="current"><a href="{% url 'allcontacts' %}">Home</a></li>
+                <li><a href="{% url 'contacts' %}">Add contacts</a></li>
+                <li><a href="#">Delete contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+{% block body %}
+{% endblock %}
+</body>
+</html>

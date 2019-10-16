@@ -1,0 +1,27 @@
+{% extends 'contacts/base.html' %}
+{% block title %} contact {% endblock %}
+{% block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ contact.name }} : {{ contact.phone_number }}
+<a href="{%  url 'update' contact.id%}"><br><button>update</button></a>
+<a style="margin-left: 20px" href="{% url 'delete' contact.id %}"><button>delete</button></a>
+{#<form action="{% url 'update' contact.id %}" method="post"></form>#}
+{#    #}
+{#    {% csrf_token %}#}
+{#    <button type="submit">Update</button>#}
+{#</form>#}
+{#<form>#}
+{#    <select value="{{ obj.id }}">#}
+{#        <a href="{% url 'update' obj.id %}"> <option value="update">update</option></a>#}
+{#        <option value="delete">delete</option>#}
+{#    </select>#}
+{#</form>#}
+</body>
+</html>
+{% endblock %}
